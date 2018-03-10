@@ -28,6 +28,7 @@ export default class Signup extends Vue {
       return hoodie.account.get()
     }).then((result) => {
       console.log(result)
+      this.$router.push('/todo')
     }).catch((err) => {
       console.log(err)
     })
