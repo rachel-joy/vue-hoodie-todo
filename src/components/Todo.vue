@@ -81,5 +81,5 @@ export default class TodoComponent extends Vue {
 }
 </script>
 
-<style lang="css">
+<style lang="scss">
 </style>
