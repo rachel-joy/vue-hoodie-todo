@@ -1,6 +1,8 @@
 <template>
-  <div class="hello">
+  <div class="content center-text">
     <h1>{{ msg }}</h1>
+    <h3>Typescript + Vue + Hoodie</h3>
+    <br>
     <b-btn to="Signup" variant="secondary" type="signup">Signup</b-btn>
     <b-btn to="Login" variant="secondary" type="login">Login</b-btn>
   </div>
@@ -18,7 +20,7 @@ export interface UserCredentials {
 
 @Component
 export default class HelloWorld extends Vue {
-    msg:string = 'Welcome to Your Vue.js App'
+    msg:string = 'Todo List'
     credentials: UserCredentials = {username: '', password: ''}
 
 }

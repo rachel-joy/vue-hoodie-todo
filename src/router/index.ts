@@ -5,6 +5,7 @@ const HelloWorld: AsyncComponent = (): any => import('@/components/HelloWorld.vu
 const Signup: AsyncComponent = (): any => import('@/components/Signup.vue')
 const Login: AsyncComponent = (): any => import('@/components/Login.vue')
 const Todo: AsyncComponent = (): any => import('@/components/Todo.vue')
+const About: AsyncComponent = (): any => import('@/components/About.vue')
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ const routes: RouteConfig[] = [
     path: '/todo',
     name: 'Todo',
     component: Todo
+  },
+  {
+    path: '/about',
+    name: 'About',
+    component: About
   }
 ]
 

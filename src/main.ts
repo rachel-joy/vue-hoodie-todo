@@ -9,6 +9,9 @@ Vue.config.productionTip = false
 
 Vue.use(BootstrapVue);
 
+const navbar = async () => (await import('./components/Nav.vue')).default
+Vue.component('navbar', navbar)
+
 import './sass/main.scss'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
@@ -18,5 +21,5 @@ new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App }
+  components: { App, navbar }
 })
