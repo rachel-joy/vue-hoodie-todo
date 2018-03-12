@@ -1,6 +1,6 @@
 <template lang="html">
   <b-container>
-    <b-form @submit.prevent="login()">
+    <b-form @submit.prevent="submit()">
       <b-form-input type="text" name="username" v-model="credentials.username" placeholder="Username"></b-form-input>
       <b-form-input type="password" name="password" v-model="credentials.password" placeholder="Password"></b-form-input>
       <b-button type="submit" variant="secondary">Login</b-button>
@@ -22,6 +22,10 @@ export interface UserCredentials {
 @Component
 export default class Login extends Vue {
   credentials: UserCredentials = {username: '', password: ''}
+
+  submit() {
+    this.login(this.credentials)
+  }
 
   login(credentials: UserCredentials) {
     hoodie.account.signIn(credentials).then(() => {
