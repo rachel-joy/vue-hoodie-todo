@@ -1,11 +1,12 @@
 <template lang="html">
-  <b-container>
+  <b-container class="content center-text">
     <b-form @submit.prevent="submit()">
       <b-form-input type="text" name="username" v-model="credentials.username" placeholder="Username"></b-form-input>
       <b-form-input type="password" name="password" v-model="credentials.password" placeholder="Password"></b-form-input>
+      <br>
       <b-button type="submit" variant="secondary">Signup</b-button>
+      <b-btn @click="logout()" type="logout" variant="secondary">Logout</b-btn>
     </b-form>
-    <b-btn @click="logout()" type="logout" variant="secondary">Logout</b-btn>
   </b-container>
 </template>
 

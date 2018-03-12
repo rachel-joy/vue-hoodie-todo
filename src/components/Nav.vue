@@ -14,7 +14,8 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import Component from "vue-class-component"
+import Component from 'vue-class-component'
+import { Watch } from 'vue-property-decorator'
 import hoodie from '../util/hoodie'
 
 @Component({
@@ -35,6 +36,17 @@ export default class Nav extends Vue {
     })
   }
 
+  @Watch('$route.path')
+  pathChanged() {
+    hoodie.account.get().then((user) => {
+      if (user.session) {
+        // user is signed in, show navbar
+        this.showNav = true;
+      }
+    }).catch((err) => {
+      console.log(err)
+    })
+  }
 }
 </script>
 
