@@ -13,6 +13,7 @@
         <br>
         <b-button type="submit" variant="secondary">Signup</b-button>
       </b-form-group>
+      <p>Already signed up? <a href="/login">Log in here.</a></p>
     </b-card>
   </b-container>
 </template>

@@ -1,15 +1,20 @@
 <template lang="html">
-  <b-container class="content center-text">
+  <b-container id="login" class="content center-text">
     <div v-if="user">
       <p>Hello, {{ user.username }}. You are logged in.</p>
       <b-btn @click="logout()" type="logout" variant="secondary">Logout</b-btn>
     </div>
-    <b-form v-else @submit.prevent="submit()">
-      <b-form-input type="text" name="username" v-model="credentials.username" placeholder="Username"></b-form-input>
-      <b-form-input type="password" name="password" v-model="credentials.password" placeholder="Password"></b-form-input>
-      <br>
-      <b-button type="submit" variant="secondary">Login</b-button>
-    </b-form>
+    <b-card v-else title="Log In">
+      <b-form-group @submit.prevent="submit()"
+                    description="Please log in with your user name and password.">
+        <b-form-input type="text" name="username" v-model="credentials.username" placeholder="Username"></b-form-input>
+        <br>
+        <b-form-input type="password" name="password" v-model="credentials.password" placeholder="Password"></b-form-input>
+        <br>
+        <b-button type="submit" variant="secondary">Login</b-button>
+      </b-form-group>
+      <p>New to this website? <a href="/signup">Sign up here.</a></p>
+    </b-card>
   </b-container>
 </template>
 
