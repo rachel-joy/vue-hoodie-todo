@@ -8,6 +8,7 @@
       <b-form-group @submit.prevent="submit()"
                     description="Create a username and password.">
         <b-form-input type="text" name="username" v-model="credentials.username" placeholder="Username"></b-form-input>
+        <br>
         <b-form-input type="password" name="password" v-model="credentials.password" placeholder="Password"></b-form-input>
         <br>
         <b-button type="submit" variant="secondary">Signup</b-button>
